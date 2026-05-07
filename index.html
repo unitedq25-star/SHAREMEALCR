@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizq-Share | Food Donation</title>
+    <link rel="stylesheet" href="meal.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>ShareMeal</h1>
+    <p class="page-subtitle">Helping you share extra food with the community.</p>
+
+    <div class="food-form" aria-label="Donate surplus food form">
+        <h3>Donate Surplus Food</h3>
+        <label for="foodName">Food item</label>
+        <input type="text" id="foodName" placeholder="Food item (e.g. Biryani, Fruit)">
+        <label for="location">Pickup location</label>
+        <input type="text" id="location" placeholder="Area (e.g. Saddar, Rawalpindi)">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" placeholder="Serves how many people? (e.g. 5)">
+        <label for="pickupDeadline">Pickup deadline</label>
+        <input type="datetime-local" id="pickupDeadline" placeholder="Pickup deadline">
+        <label for="foodCondition">Food condition</label>
+        <select id="foodCondition">
+            <option value="">Loading conditions...</option>
+        </select>
+        <label for="foodType">Food category</label>
+        <select id="foodType">
+            <option value="">Loading categories...</option>
+        </select>
+        <button onclick="handleAddFood()">Post Now</button>
+    </div>
+
+    <div id="foodFeed" aria-live="polite"></div>
+
+    <div class="inbox-box" aria-label="Inbox chat">
+        <h3>Inbox Chat</h3>
+        <div id="inboxFeed" class="inbox-feed"></div>
+        <div class="inbox-form">
+            <label class="sr-only" for="senderRole">I am</label>
+            <select id="senderRole">
+                <option value="Donor">Donor</option>
+                <option value="Receiver">Receiver</option>
+            </select>
+            <label class="sr-only" for="inboxText">Type message</label>
+            <input type="text" id="inboxText" placeholder="Type message here...">
+            <button onclick="handleSendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Note:</strong> Please ensure food is fresh. This platform is for coordination only.</p>
+    </div>
+</div>
+
+<script src="storage.js"></script>
+<script src="constant.js"></script>
+<script src="model.js"></script>
+<script src="ui.js"></script>
+<script src="inbox.js"></script>
+<script src="meal.js"></script>
+
+</body>
+</html>
